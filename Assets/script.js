@@ -30,15 +30,9 @@ localStorage[hourBlock + "-schedule"] = savedText;
 setTextInTimeBlock();
 
 function setTextInTimeBlock() {
-$("div[id^='hour-9']").children("textarea").text(localStorage.getItem("hour-9-schedule"));
-$("div[id^='hour-10']").children("textarea").text(localStorage.getItem("hour-10-schedule"));
-$("div[id^='hour-11']").children("textarea").text(localStorage.getItem("hour-11-schedule"));
-$("div[id^='hour-12']").children("textarea").text(localStorage.getItem("hour-12-schedule"));
-$("div[id^='hour-13']").children("textarea").text(localStorage.getItem("hour-13-schedule"));
-$("div[id^='hour-14']").children("textarea").text(localStorage.getItem("hour-14-schedule"));
-$("div[id^='hour-15']").children("textarea").text(localStorage.getItem("hour-15-schedule"));
-$("div[id^='hour-16']").children("textarea").text(localStorage.getItem("hour-16-schedule"));
-$("div[id^='hour-17']").children("textarea").text(localStorage.getItem("hour-17-schedule"));
+for(let i = 0; i < 9; i++ ){
+    $("div[id^='hour-"+[i+9]+"']").children("textarea").text(localStorage.getItem("hour-"+[i+9]+"-schedule"));
+}
 }
 });
 
